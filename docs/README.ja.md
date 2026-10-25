@@ -153,7 +153,7 @@ const stocks = await kit.getStockList();
 const documented = stocks.filter((s) => isKnownValue(s.id, STOCK_IDS));
 ```
 
-未知のキーは既に受け入れられており（`passthrough`）、同じギャップを未知の値についても埋めています。
+未知のキーは既に受け入れられており（`loose`）、同じギャップを未知の値についても埋めています。
 
 ### Stock キャッシュ
 

@@ -39,7 +39,7 @@ export interface RequestOptions<T> {
   /** Request path, e.g. `/v3/tax/`. Trailing slashes are removed. */
   readonly path: string;
   /** `zod` schema validating the parsed body of a 2xx response. */
-  readonly schema: z.ZodType<T, z.ZodTypeDef, unknown>;
+  readonly schema: z.ZodType<T>;
 }
 
 /** Headers sent by default; user supplied headers override them. */

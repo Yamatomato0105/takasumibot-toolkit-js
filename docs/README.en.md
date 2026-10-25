@@ -150,7 +150,7 @@ const stocks = await kit.getStockList();
 const documented = stocks.filter((s) => isKnownValue(s.id, STOCK_IDS));
 ```
 
-Unknown **keys** were already tolerated (`passthrough`); this closes the same gap for unknown **values**.
+Unknown **keys** were already tolerated (`loose`); this closes the same gap for unknown **values**.
 
 ### Stock cache
 

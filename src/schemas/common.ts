@@ -2,7 +2,7 @@ import { z } from "zod";
 
 /**
  * Wraps an object schema so that unknown keys are **preserved** instead of being
- * stripped (zod `passthrough`).
+ * stripped (zod `loose`).
  *
  * The returned schema validates exactly like the input one, but keeps every
  * additional property the API may add in the future, so a new field never
@@ -23,11 +23,11 @@ import { z } from "zod";
  */
 export function laxObject<S extends z.ZodObject<z.ZodRawShape>>(
   schema: S,
-): z.ZodType<z.infer<S>, z.ZodTypeDef, unknown> {
-  // The cast is safe: `.passthrough()` only widens the *runtime* output with
+): z.ZodType<z.infer<S>> {
+  // The cast is safe: `.loose()` only widens the *runtime* output with
   // extra unknown properties, which the declared type deliberately omits so
   // that `keyof` stays a finite union of the documented fields.
-  return schema.passthrough() as unknown as z.ZodType<z.infer<S>, z.ZodTypeDef, unknown>;
+  return schema.loose() as unknown as z.ZodType<z.infer<S>>;
 }
 
 const INTEGER_STRING = /^-?\d+$/;

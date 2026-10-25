@@ -120,7 +120,7 @@ describe("errors", () => {
         {
           code: "invalid_type",
           expected: "string",
-          received: "number",
+          input: 42,
           path: ["a"],
           message: "Expected string",
         },
