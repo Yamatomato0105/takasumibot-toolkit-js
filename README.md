@@ -11,6 +11,10 @@
 - `int64` の値は `bigint` で扱い、精度を保持
 - 公開 API のため認証不要。WebSocket (`/v3/realtime/`) は対象外
 
+> [!IMPORTANT]
+> この SDK は **非公式** です。TakasumiBOT および TakasumiBOT 運営チームとは一切関係ありません。
+> 詳細は [このパッケージについて](#このパッケージについて) 節 を参照してください。
+
 ## インストール
 
 ```bash
@@ -90,12 +94,18 @@ npm run typecheck
 npm run generate:types
 ```
 
+## このパッケージについて
+この SDK は、TakasumiBOT API の HTTP エンドポイントを TypeScript で利用するための非公式クライアントです。SDK の更新は TakasumiBOT API の更新に追従しますが、API の仕様変更により SDK が一時的に利用できなくなる場合があります。
+
+また、この SDK は TakasumiBOT および TakasumiBOT 運営チームとは一切関係ありません。SDK に関する質問や不具合報告は、[GitHub Discussions](https://github.com/Yamatomato0105/takasumibot-toolkit-js/discussions) にて行ってください。
+TakasumiBOT に関する質問や不具合報告は、TakasumiBOT 運営チームの公式 Discord サーバー「TakasumiBOT Community」にて行ってください。
+
 ## TakasumiBOT-OpenAPI-Document.json について
 この SDK は、同梱の `TakasumiBOT-OpenAPI-Document.json` に基づき、HTTP エンドポイントを定義しています。
 この OpenAPI ドキュメントは、[TakasumiBOT API](https://api.takasumibot.com/docs) から取得したものを SDK 用に情報を追加および整理したものです。SDK の更新に伴い、同梱の OpenAPI ドキュメントが更新される場合があります。
 元の OpenAPI ドキュメントは TakasumiBOT API から取得できます。
+なお、パッケージの `TakasumiBOT-OpenAPI-Document.json` は配布許可を得て同梱しています。
 
 ## ライセンス
 
-[MIT](./LICENSE)
-同梱の `TakasumiBOT-OpenAPI-Document.json` は配布許可を得て同梱しています。
+[MIT](./LICENSE)  — Copyright (c) 2026 Yamatomato0105.
