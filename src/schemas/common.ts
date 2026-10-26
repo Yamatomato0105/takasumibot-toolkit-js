@@ -21,9 +21,7 @@ import { z } from "zod";
  * schema.parse({ a: "x", b: 1 }); // { a: "x", b: 1 }
  * ```
  */
-export function laxObject<S extends z.ZodObject<z.ZodRawShape>>(
-  schema: S,
-): z.ZodType<z.infer<S>> {
+export function laxObject<S extends z.ZodObject<z.ZodRawShape>>(schema: S): z.ZodType<z.infer<S>> {
   // The cast is safe: `.loose()` only widens the *runtime* output with
   // extra unknown properties, which the declared type deliberately omits so
   // that `keyof` stays a finite union of the documented fields.
